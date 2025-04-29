@@ -1,8 +1,15 @@
 let rockBtn = document.getElementById("rock");
 let paperBtn = document.getElementById("paper");
 let scissorBtn = document.getElementById("scissor");
+let resetBtn = document.getElementById("reset");
 
 let computerMove='';
+
+const score={
+    wins: 0,
+    losses: 0,
+    ties: 0
+};
 
 function click(){
     const randomNumber = Math.random();
@@ -60,6 +67,18 @@ function finalMove(playerMove){
             result = 'You win.';
         }
     }
-    alert(`You picked ${playerMove}. Computer picked ${computerChoice}. ${result}`);
+
+    if(result === 'You win.'){
+        score.wins+=1;
+    }
+    else if(result === 'You lose.'){
+        score.losses+=1;
+    }
+    else if(result === 'Tie.'){
+        score.ties+=1;
+    }
+
+    alert(`You picked ${playerMove}. Computer picked ${computerChoice}. ${result}
+Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
 }
 
