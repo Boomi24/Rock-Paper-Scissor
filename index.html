@@ -11,11 +11,17 @@
             <button id="rock" onclick="finalMove('rock')">Rock</button>
             <button id="paper" onclick="finalMove('paper')">Paper</button>
             <button id="scissor" onclick="finalMove('scissor')">Scissor</button>
+            
+            <p class="js-results"></p>
+            <p class="js-moves"></p>
+            <p class="js-scores"></p>
+            
             <button id="reset" onclick="
                 score.wins=0;
                 score.losses=0;
                 score.ties=0;
                 localStorage.removeItem('score');
+                updateScores();
             ">Reset Score</button>
             <script src="script.js"></script>
         </div>
