@@ -3,26 +3,29 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock Paper Scissor</title>
+        <title>Rock Paper Scissor Game</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Rock Paper Scissor Game</h1>
-        <div>
-            <button id="rock" onclick="finalMove('rock')">Rock</button>
-            <button id="paper" onclick="finalMove('paper')">Paper</button>
-            <button id="scissor" onclick="finalMove('scissor')">Scissor</button>
-            
-            <p class="js-results"></p>
-            <p class="js-moves"></p>
-            <p class="js-scores"></p>
-            
-            <button id="reset" onclick="
-                score.wins=0;
-                score.losses=0;
-                score.ties=0;
-                localStorage.removeItem('score');
-                updateScores();
-            ">Reset Score</button>
+        <center>
+            <h1>Rock Paper Scissor Game</h1>
+            <div>
+                <button id="rock-btn" onclick="finalMove('rock')">✊</button>
+                <button id="paper-btn" onclick="finalMove('paper')">✋</button>
+                <button id="scissor-btn" onclick="finalMove('scissor')">✌️</button>
+                
+                <p class="js-results"></p>
+                <p class="js-moves"></p>
+                <p class="js-scores"></p>
+                
+                <button id="reset-btn" onclick="
+                    score.wins=0;
+                    score.losses=0;
+                    score.ties=0;
+                    localStorage.removeItem('score');
+                    updateScores();
+                ">Reset Score</button>
+            </center>
             <script src="script.js"></script>
         </div>
     </body>
