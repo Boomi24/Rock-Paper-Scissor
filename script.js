@@ -2,6 +2,9 @@ let rockBtn = document.getElementById("rock");
 let paperBtn = document.getElementById("paper");
 let scissorBtn = document.getElementById("scissor");
 let resetBtn = document.getElementById("reset");
+let finalResults = document.querySelector(".js-results");
+let finalMoves = document.querySelector(".js-moves");
+let finalScores = document.querySelector(".js-scores");
 
 let computerMove='';
 
@@ -10,6 +13,8 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     losses: 0,
     ties: 0
 };
+
+updateScores();
 
 function click(){
     const randomNumber = Math.random();
@@ -69,18 +74,23 @@ function finalMove(playerMove){
     }
 
     if(result === 'You win.'){
-        score.wins+=1;
+        score.wins += 1;
     }
     else if(result === 'You lose.'){
-        score.losses+=1;
+        score.losses += 1;
     }
     else if(result === 'Tie.'){
-        score.ties+=1;
+        score.ties += 1;
     }
 
     localStorage.setItem('score' , JSON.stringify(score));
 
-    alert(`You picked ${playerMove}. Computer picked ${computerChoice}. ${result}
-Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
+    finalMoves.innerHTML=`"You" ${playerMove} - "Computer" ${computerChoice}`;
+    finalResults.innerHTML=result;
+    updateScores();
+
+}
+function updateScores(){
+    finalScores.innerHTML = `Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`;
 }
 
