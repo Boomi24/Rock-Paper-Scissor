@@ -1,0 +1,29 @@
+body{
+    font-family:cursive;
+}
+#rock-btn,#paper-btn,#scissor-btn{
+    font-size: 100px;
+    border-width: 20px;
+    border-color: lightgreen;
+    background-color: black;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 60px;
+}
+#reset-btn{
+    font-size: 25px;
+    border-width: 10px;
+    color: white;
+    border-color: darksalmon;
+    background-color: black;
+    cursor: pointer;
+    border-radius: 10px;
+}
+p{
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;    
+}
+h1{
+    font-size: 60px;
+}
